@@ -1,0 +1,31 @@
+ <body>
+    
+    <div class="conteudo-login">
+
+        <form class="conteudo-form" [formGroup]="loginForm" >
+
+            <div class="logo">
+                logo
+            </div>
+
+            <div>
+                <input class="input-login" placeholder="E-mail" formControlName="Email"/>
+            </div>
+            <div class="mensagem-erro" >
+                Email Obrigatório!
+            </div>
+            
+            <div>
+                <input class="input-login2" placeholder="Senha" formControlName="Senha"/>
+            </div>
+            <div class="mensagem-erro">
+                Senha Obrigatória!
+            </div>
+            <div>
+                <input class="input-submit" type="submit" value="Entrar">
+            </div>
+
+        </form>
+
+    </div>
+</body>
