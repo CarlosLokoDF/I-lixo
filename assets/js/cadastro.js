@@ -44,31 +44,68 @@ nome.addEventListener('keyup', () => {
 })
 
 cpf.addEventListener('keyup', () => {
-  if(cpf.value.length <= 10){
+  filter =  /^(\d)\1{10}$/;
+  let resto;
+  if (cpf.value.length !== 11 || filter.test(cpf.value)) {
     labelCpf.setAttribute('style', 'color: red')
-    labelCpf.innerHTML = 'CPF *Insira um CPF válido'
+    labelCpf.innerHTML = '*Insira um CPF válido'
     cpf.setAttribute('style', 'border-color: red')
     validCpf = false
-  } else {
-    labelCpf.setAttribute('style', 'color: green')
-    labelCpf.innerHTML = 'cpf'
-    cpf.setAttribute('style', 'border-color: green')
-    validCpf = true
+} else {
+    let soma = 0;
+    for (let i = 0; i < 9; i++) {
+      soma += parseInt(cpf.value.charAt(i)) * (10 - i);
+    }
+    resto = 11 - (soma % 11);
+    let digitoVerificador1 = (resto === 10 || resto === 11) ? 0 : resto;
+  
+    if (digitoVerificador1 !== parseInt(cpf.value.charAt(9))) {
+      labelCpf.setAttribute('style', 'color: red')
+      labelCpf.innerHTML = '*Insira um CPF válido'
+      cpf.setAttribute('style', 'border-color: red')
+      validCpf = false
+    } else {
+      soma = 0
+      for (let i = 0; i < 10; i++) {
+        soma += parseInt(cpf.value.charAt(i)) * (11 - i);
+      }
+      resto = 11 - (soma % 11);
+      let digitoVerificador2 = (resto === 10 || resto === 11) ? 0 : resto;
+  
+      if (digitoVerificador2 !== parseInt(cpf.value.charAt(10))) {
+        labelCpf.setAttribute('style', 'color: red')
+        labelCpf.innerHTML = '*Insira um CPF válido'
+        cpf.setAttribute('style', 'border-color: red')
+        validCpf = false
+      } else {
+        labelCpf.setAttribute('style', 'color: green')
+        labelCpf.innerHTML = 'CPF'
+        cpf.setAttribute('style', 'border-color: green')
+        validCpf = true
+      }
+    }
   }
+   
 })
 
 telefone.addEventListener('keyup', () => {
-  if(telefone.value.length <= 8){
+  
+  if (telefone.value.length < 12 || telefone.value.length > 18) {
     labelTelefone.setAttribute('style', 'color: red')
-    labelTelefone.innerHTML = 'Telefone *Insira um Telefone válido'
+    labelTelefone.innerHTML = ' *Insira um telefone válido'
     telefone.setAttribute('style', 'border-color: red')
     validTelefone = false
   } else {
     labelTelefone.setAttribute('style', 'color: green')
-    labelTelefone.innerHTML = 'telefone'
+    labelTelefone.innerHTML = 'Telefone'
     telefone.setAttribute('style', 'border-color: green')
     validTelefone = true
   }
+  telefone.value = telefone.value.replace(/\D/g,'')
+  telefone.value = telefone.value.replace(/(\d{2})(\d)/,"($1) $2")
+  telefone.value = telefone.value.replace(/(\d)(\d{4})$/,"$1-$2")
+  
+  
 })
 
 email.addEventListener('keyup', () => {
