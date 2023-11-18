@@ -6,9 +6,17 @@ let nome = document.querySelector('#nome')
 let labelNome = document.querySelector('#labelNome')
 let validNome = false
 
+let cpf = document.querySelector('#cpf')
+let labelCpf = document.querySelector('#labelCpf')
+let validCpf = false
+
 let email = document.querySelector('#email')
 let labelEmail = document.querySelector('#labelEmail')
 let validEmail = false
+
+let telefone = document.querySelector('#telefone')
+let labelTelefone = document.querySelector('#labelTelefone')
+let validTelefone = false
 
 let senha = document.querySelector('#senha')
 let labelSenha = document.querySelector('#labelSenha')
@@ -35,19 +43,52 @@ nome.addEventListener('keyup', () => {
   }
 })
 
+cpf.addEventListener('keyup', () => {
+  if(cpf.value.length <= 10){
+    labelCpf.setAttribute('style', 'color: red')
+    labelCpf.innerHTML = 'CPF *Insira um CPF válido'
+    cpf.setAttribute('style', 'border-color: red')
+    validCpf = false
+  } else {
+    labelCpf.setAttribute('style', 'color: green')
+    labelCpf.innerHTML = 'cpf'
+    cpf.setAttribute('style', 'border-color: green')
+    validCpf = true
+  }
+})
+
+telefone.addEventListener('keyup', () => {
+  if(telefone.value.length <= 8){
+    labelTelefone.setAttribute('style', 'color: red')
+    labelTelefone.innerHTML = 'Telefone *Insira um Telefone válido'
+    telefone.setAttribute('style', 'border-color: red')
+    validTelefone = false
+  } else {
+    labelTelefone.setAttribute('style', 'color: green')
+    labelTelefone.innerHTML = 'telefone'
+    telefone.setAttribute('style', 'border-color: green')
+    validTelefone = true
+  }
+})
+
 email.addEventListener('keyup', () => {
-  if(email.value.length <= 4){
+  console.log(email.value)
+  var filter = /^[^\s@]+@[^\s@]+.[^\s@]+$/;
+  if(!filter.test(email.value)){
     labelEmail.setAttribute('style', 'color: red')
-    labelEmail.innerHTML = 'E-mail *Insira um Email inválido'
+    labelEmail.innerHTML = 'Email *Insira um email válido'
     email.setAttribute('style', 'border-color: red')
     validEmail = false
   } else {
     labelEmail.setAttribute('style', 'color: green')
-    labelEmail.innerHTML = 'E-mail'
+    labelEmail.innerHTML = 'Email'
     email.setAttribute('style', 'border-color: green')
     validEmail = true
   }
+  
 })
+
+
 
 senha.addEventListener('keyup', () => {
   if(senha.value.length <= 5){
@@ -78,13 +119,15 @@ confirmSenha.addEventListener('keyup', () => {
 })
 
 function cadastrar(){
-  if(validNome && validEmail && validSenha && validConfirmSenha){
+  if(validNome && validCpf && validEmail && validTelefone && validSenha && validConfirmSenha){
     let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
     
     listaUser.push(
     {
       nomeCad: nome.value,
+      cpfCad: cpf.value,
       emailCad: email.value,
+      telefoneCad: telefone.value,
       senhaCad: senha.value
     }
     )
@@ -98,7 +141,7 @@ function cadastrar(){
     msgError.innerHTML = ''
     
     setTimeout(()=>{
-        window.location.href = '../assets/html/login.html'
+        window.location.href = '../html/login.html'
     }, 2000)
   
     

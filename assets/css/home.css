@@ -1,6 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Poppins:wght@100&display=swap');
+
+body{
+    background-color: white;
+    margin: 0 auto;
+    padding: 0px;
+    width: 100%;
+}
+
 header{
-    text-align: center;
-    background-color: green;
-    color: aliceblue;
+    background-color: #1EC70A;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 0;
+    border-right: 3px solid black;
+    border-bottom: 3px solid black;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
     
+}
+
+
+.title{
+    margin-top: 15px;
+    margin-left: 20px;
+    color: black;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+}
+
+.title > h1{
+    display: flex;
+    margin-top: 0;
+    font-size: 20px;
+    vertical-align: middle;
+    
+}
+
+.title > img{
+    width: 3vw;
+    height: 3vw;
+    margin: 5px;
+    margin: 0;
+}
+
+img{
+    width: 30px;
+}
+
+
+li{
+    margin-top: 30px;
+    display: inline-block;
+    margin-right: 20px;
+    color:black;
+    font-size: 20px;
+    vertical-align: middle;  
+}
+
+ul > img{
+    margin-top: 30px;
+    width: 35px;
+    vertical-align: middle;
+}
+
+.card-video > .container{
+    background-color: #1EC70A;
+    width: 588px;
+    height: 355px;
+}
+
+main{
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    border-bottom: 3px solid black;
+}
+
+.card-home{
+    color: darkgreen;
+    margin-top: 80px;
+    font-style: bold;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-principal{
+    font-family: "Agbalumo", sans-serif ;
+}
+
+.text-secundario{
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.card-home2{
+    background-color: white;
+    border-bottom: 3px solid #1EC70A ;
+    color: black;
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    padding: 60px;
+    padding-bottom: 120px;
+}
+
+.card-home2 > .text-etapas{
+    margin-top: 70px;
+}
+
+.text-etapas-principal{
+    color: black;
+    font-weight: bold
+}
+
+.text-etapas > .text-etapas-complemento{
+    color: green;
+}
+
+.text-etapas > h4{
+    margin-top: 20px;
+}
+
+.card-home3{
+    background-color: white;
+    padding: 60px;
+    padding-bottom: 120px;
+    border-bottom: 3px solid black;
+}
+
+.text-compost{
+    color: black;
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.cards-compost{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.title-compost{
+    font-weight: bold;
+    text-align: center;
+}
+
+.container{
+    color: white;
+    background-color: #1EC70A;
+    border-radius: 6px;
+    border: solid 2px green;
+    margin-top: 20px;
+    width: 300px;
+    height: 400px;
+}
+
+aside{
+    background-color:  white;
+    margin-top: 30px;
+    padding: 30px;
+    padding-bottom: 60px;
+}
+
+aside > h1{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+aside > .area-resposta{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+aside > .area-resposta > .container{
+    width: 600px;
+    height: 480px;
+}
+
+.container > h2{
+    margin-top: 5px;
+}
+
+aside > .card-comentario{
+    padding-top: 30px;
+}
+
+.btn-env{
+    margin-top: 24px;
+}
+
+.img-arvore{
+    vertical-align: middle;
+    width: 650px;
+    height: 500px;
 }
