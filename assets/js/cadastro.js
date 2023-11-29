@@ -1,6 +1,6 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js'
 import { getAuth, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js'
-import { getFirestore, addDoc, collection } from 'https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js'
+import { getFirestore, setDoc, doc } from 'https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js'
 
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyBORA1Rg2yS097wd1kakrUzz6VuQm2xn_8",
@@ -191,6 +191,12 @@ function registrar() {
       const errorMessage = error.message;
       console.log(errorCode)
       console.log(errorMessage)
+    });
+    
+    setDoc(doc(db, "usuario", email.value), {
+      nome: nome.value,
+      cpf: cpf.value,
+      telefone: telefone.value,
     });
 
     const docRef = addDoc(collection(db, "usuario"), {
