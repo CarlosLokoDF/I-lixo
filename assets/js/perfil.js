@@ -23,7 +23,7 @@ onAuthStateChanged(auth, (user) => {
         const email = user.email;
         console.log(email);
     }else {
-        console.log("Não logado")
+        document.location.href = "/assets/html/Login.html";
     }
 });
 

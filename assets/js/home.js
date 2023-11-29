@@ -23,7 +23,6 @@ onAuthStateChanged(auth, (user) => {
         txtPerfil.innerHTML = "Perfil"
 
     } else {
-        console.log("Não logado")
     }
 });
 
