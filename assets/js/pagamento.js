@@ -1,6 +1,5 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js'
 import { getAuth, onAuthStateChanged, setPersistence, signInWithEmailAndPassword, browserSessionPersistence } from 'https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js'
-import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
 
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyBORA1Rg2yS097wd1kakrUzz6VuQm2xn_8",
@@ -14,25 +13,13 @@ const firebaseApp = initializeApp({
 });
 
 const auth = getAuth(firebaseApp);
-const db = getFirestore(firebaseApp)
-
-async function getdata (email) {
-  const docRef = doc(db, "usuario", email);
-  const docSnap = await getDoc(docRef);
-  
-  if (docSnap.exists()) {
-    console.log(docSnap.data());
-    //usar dados do db docSnap.data()
-  } else {
-    console.log("No such document!");
-  }
-}
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
         const email = user.email;
         console.log(email);
-        getdata(email);
+        //Funções do pagamento nessa area de usuario logado 
+        //definir e puxar variaveis do do html fora
     }else {
         document.location.href = "/assets/html/Login.html";
     }
