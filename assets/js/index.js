@@ -1,15 +1,36 @@
-if (localStorage.getItem('token') == null) {
-  alert('Você precisa estar logado para acessar essa página')
-  window.location.href = './assets/html/login.html'
-}
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js'
+import { getAuth, onAuthStateChanged, setPersistence, signInWithEmailAndPassword, browserSessionPersistence } from 'https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js'
 
-let userLogado = JSON.parse(localStorage.getItem('userLogado'))
+const firebaseApp = initializeApp({
+  apiKey: "AIzaSyBORA1Rg2yS097wd1kakrUzz6VuQm2xn_8",
+  authDomain: "ilixo-abfed.firebaseapp.com",
+  databaseURL: "https://ilixo-abfed-default-rtdb.firebaseio.com",
+  projectId: "ilixo-abfed",
+  storageBucket: "ilixo-abfed.appspot.com",
+  messagingSenderId: "602244988300",
+  appId: "1:602244988300:web:09e0d0b8f4cc83f0c32aa9",
+  measurementId: "G-RQ2DB3PNQY"
+});
 
-let logado = document.querySelector('#logado')
-logado.innerHTML = `Olá ${userLogado.nome}`
+const auth = getAuth(firebaseApp);
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        const uid = user.uid;
+        console.log(uid);
+        var perfil = document.getElementById("perfil");
+        var txtPerfil = document.getElementById("txtPerfil")
+        perfil.setAttribute("href", "/assets/html/perfil.html")
+        txtPerfil.innerHTML = "Perfil"
 
-function sair() {
-  localStorage.removeItem('token')
-  localStorage.removeItem('userLogado')
-  window.location.href = './assets/html/login.html'
-}
+    } else {
+    }
+});
+
+setPersistence(auth, browserSessionPersistence)
+  .then(() => {
+    return signInWithEmailAndPassword(auth, email, password);
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });

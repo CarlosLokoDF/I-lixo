@@ -96,17 +96,103 @@ main{
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.btn-adote{
+    border-bottom: 3px solid black;
+    padding: 50px;
+}
+
+.btn-adote > h1{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    -webkit-text-stroke-color:#1EC70A;
+    -webkit-text-stroke-width: 0.7px;
+}
+
+.btn-adote > button{
+    text-align: center;
+}
+
 .card-home2{
     background-color: white;
-    border-bottom: 3px solid #1EC70A ;
+    padding: 60px;
+    border-bottom: 3px solid black;
+
+}
+
+.title-card2{
+    color: black;
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    -webkit-text-stroke-color:#1EC70A;
+    -webkit-text-stroke-width: 0.7px;
+}
+
+.card-home2 > h3{
+    color: black;
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    margin-top: 50px;
+
+}
+
+.card-home2 > p{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 23px;
+    font-family:'Times New Roman', Times, serif;
+    color: green;
+}
+
+.card-home2 > img{
+    margin-top: 20px;
+    margin-left: 510px;
+    height: 360px;
+    width: 400px;
+}
+
+.card-home3{
+    background-color: white;
+    padding: 60px;
+    border-bottom: 3px solid black;
+}
+
+.title-card3{
+    color: black;
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    margin-bottom: 20px;
+    -webkit-text-stroke-color:#1EC70A;
+    -webkit-text-stroke-width: 0.7px;
+}
+
+.card-home3 > h3{
+    color: black;
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+    margin-top: 50px;
+    margin-bottom: 30px;
+
+}
+
+.card-home3 > p{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 23px;
+    font-family:'Times New Roman', Times, serif;
+    color: green;
+}
+
+
+.card-home4{
+    background-color: white;
+    border-bottom: 3px solid black ;
     color: black;
     text-align: center;
     font-family:'Times New Roman', Times, serif;
     padding: 60px;
-    padding-bottom: 120px;
 }
 
-.card-home2 > .text-etapas{
+.card-home4 > .text-etapas{
     margin-top: 70px;
 }
 
@@ -121,32 +207,6 @@ main{
 
 .text-etapas > h4{
     margin-top: 20px;
-}
-
-.card-home3{
-    background-color: white;
-    padding: 60px;
-    padding-bottom: 120px;
-    border-bottom: 3px solid black;
-}
-
-.text-compost{
-    color: black;
-    font-family:Georgia, 'Times New Roman', Times, serif ;
-    font-weight: bolder;
-    text-align: center;
-}
-
-.cards-compost{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 50px;
-}
-
-.title-compost{
-    font-weight: bold;
-    text-align: center;
 }
 
 .container{
@@ -170,6 +230,11 @@ aside > h1{
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
 }
+
+aside > h4{
+    text-align: center;
+}
+
 
 aside > .area-resposta{
     margin-top: 60px;
