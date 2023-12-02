@@ -21,6 +21,8 @@ onAuthStateChanged(auth, (user) => {
         var txtPerfil = document.getElementById("txtPerfil")
         perfil.setAttribute("href", "/assets/html/perfil.html")
         txtPerfil.innerHTML = "Perfil"
+        var adote = document.getElementById("btn-adote")
+        adote.setAttribute("href", "/assets/html/adote.html")
 
     } else {
     }
