@@ -14,10 +14,7 @@ header{
     justify-content: space-between;
     flex-direction: row;
     margin-top: 0;
-    border-right: 3px solid black;
     border-bottom: 3px solid black;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
     
 }
 
@@ -65,7 +62,7 @@ ul > img{
 }
 
 .card-video > .container{
-    background-color: #1EC70A;
+    background-color: #12b000;
     width: 588px;
     height: 355px;
 }
@@ -76,11 +73,13 @@ main{
     justify-content: space-around;
     padding-top: 30px;
     padding-bottom: 40px;
-    border-bottom: 3px solid black;
+    background-color: #46E33E;
+    border-bottom-left-radius: 110px;
+    border-bottom-right-radius: 110px;
 }
 
 .card-home{
-    color: darkgreen;
+    color: black;
     margin-top: 80px;
     font-style: bold;
     font-size: 30px;
@@ -106,6 +105,7 @@ main{
     font-family: 'Times New Roman', Times, serif;
     -webkit-text-stroke-color:#1EC70A;
     -webkit-text-stroke-width: 0.7px;
+    margin-bottom: 40px;
 }
 
 .btn-adote > button{
@@ -143,11 +143,24 @@ main{
     color: green;
 }
 
-.card-home2 > img{
-    margin-top: 20px;
-    margin-left: 510px;
-    height: 360px;
-    width: 400px;
+.card-home2-img{
+    justify-content: center;
+    display: flex;
+}
+
+.card-home2-image{
+    width: 40%;
+    height: 25%;
+    display: block;
+    margin: 0;
+}
+
+.card-home2-animation{
+    text-align: center;
+}
+
+.question-animation{
+    width: 20%;
 }
 
 .card-home3{
@@ -237,15 +250,15 @@ aside > h4{
 
 
 aside > .area-resposta{
-    margin-top: 60px;
+    margin-top: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
 aside > .area-resposta > .container{
-    width: 600px;
-    height: 480px;
+    width: 450%;
+    height: 300%;
 }
 
 .container > h2{
@@ -257,11 +270,14 @@ aside > .card-comentario{
 }
 
 .btn-env{
-    margin-top: 24px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 100%;
 }
 
-.img-arvore{
+.waste-animation{
     vertical-align: middle;
-    width: 650px;
-    height: 500px;
+    width: 50%;
+    height: 100%;
 }
