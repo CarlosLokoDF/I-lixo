@@ -22,7 +22,21 @@ async function getdata (email) {
   
   if (docSnap.exists()) {
     console.log(docSnap.data());
-    //usar dados do db docSnap.data()
+    var cpf = docSnap.data()["cpf"];
+    var nome = docSnap.data()["nome"];
+    var telefone = docSnap.data()["telefone"];
+    var composteiras = docSnap.data()["composteiras"];
+    if (composteiras) {
+      var listaEstados = [];
+      for (var i = 0; i < composteiras.length; i++) {
+        var ref = composteiras[i]["id"];
+        var composteira = await getDoc(ref);
+        listaEstados.push(composteira.data()["estado"]);
+      }
+      console.log(listaEstados[0]);
+    } else {
+      console.log("Nenhuma composteira")
+    };
   } else {
     console.log("No such document!");
   }

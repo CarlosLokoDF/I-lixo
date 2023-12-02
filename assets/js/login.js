@@ -40,7 +40,7 @@ function login(){
 
   signInWithEmailAndPassword(auth, email.value, senha.value).then((userCredential) => {
     const user = userCredential.user;
-    window.location.href = './home.html'
+    window.location.href = '../../index.html'
     console.log(user)
   }).catch((error) => {
     email.setAttribute('style', 'border-color: red')
