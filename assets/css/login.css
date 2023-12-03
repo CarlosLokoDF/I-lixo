@@ -14,8 +14,9 @@ header{
 }
 
 img{
-  width: 150px;
-
+  width: 300%;
+  justify-content: center;
+  text-align: center;
 }
 
 
