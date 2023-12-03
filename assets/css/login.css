@@ -8,15 +8,16 @@
 
 header{
     margin-left: 690px;
-    width: 50px;
+    width: 100%;
     height: 25px;
     margin-top: 50px;
 }
 
 img{
-  width: 300%;
+  width: 10%;
+  display: flex;
   justify-content: center;
-  text-align: center;
+  align-items: center;
 }
 
 
