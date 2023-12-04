@@ -6,7 +6,7 @@ body {
     justify-content: center; /* Centraliza o conteúdo horizontalmente */
     height: 100vh; /* Garante que a altura da página seja pelo menos a altura da viewport */
     margin: 0; /* Remove margens padrão do corpo */
-}
+}ffff
 .titulo, h1{
     text-align: center;
     justify-content: center;
@@ -14,7 +14,7 @@ body {
     top:30px;
     display: grid;
     gap: 20px;
-}
+}ff
 .container{
     text-align: center;
     justify-content: center;
