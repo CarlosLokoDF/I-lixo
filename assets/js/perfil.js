@@ -37,7 +37,6 @@ async function getdata (email) {
     var nome = docSnap.data()["nome"];
     userName.textContent = nome
     var telefone = docSnap.data()["telefone"];
-    phone.textContent = telefone
     var composteiras = docSnap.data()["composteiras"];
     if (composteiras) {
       var listaEstados = [];
@@ -50,6 +49,8 @@ async function getdata (email) {
     } else {
       console.log("Nenhuma composteira")
     };
+    // Escrever aqui para utilizar os 
+    // estados da composteira pelo array listaEstados
   } else {
     console.log("No such document!");
   }
