@@ -16,15 +16,28 @@ const firebaseApp = initializeApp({
 const auth = getAuth(firebaseApp);
 const db = getFirestore(firebaseApp)
 
+var userName = document.querySelector('#userName')
+console.log(userName)
+var docCpf = document.querySelector('#docCpf')
+console.log(docCpf)
+var mail = document.querySelector('#mail')
+console.log(mail)
+var phone = document.querySelector('#phone')
+console.log(phone)
+
 async function getdata (email) {
   const docRef = doc(db, "usuario", email);
   const docSnap = await getDoc(docRef);
   
   if (docSnap.exists()) {
     console.log(docSnap.data());
+    
     var cpf = docSnap.data()["cpf"];
+    docCpf.textContent = cpf
     var nome = docSnap.data()["nome"];
+    userName.textContent = nome
     var telefone = docSnap.data()["telefone"];
+    phone.textContent = telefone
     var composteiras = docSnap.data()["composteiras"];
     if (composteiras) {
       var listaEstados = [];
@@ -47,6 +60,7 @@ onAuthStateChanged(auth, (user) => {
         const email = user.email;
         console.log(email);
         getdata(email);
+        mail.textContent = email 
     }else {
         document.location.href = "/assets/html/Login.html";
     }

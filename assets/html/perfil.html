@@ -1,12 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/login.css">
+  <link rel="shortcut icon" href="/assets/images/Screenshot_1-removebg-preview.png" type="image/x-icon">
+  <title>Login</title>
+  <link rel="stylesheet" href="../css/perfil.css">
 </head>
+
 <body>
+    <div class="titulo">
+        <h1>DADOS CADASTRADOS</h1> <br>
+    </div>
+    <div class="container">
+        <p>Seu nome cadastrado: <span id="userName"></span></p>
+        <p>Seu CPF: <span id="docCpf"></span></p>
+        <p>Seu E-Mail: <span id="mail"></span></p>
+        <p>Telefone: <span id="phone"></span></p>
     
+        <button id="voltarButton">Voltar</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
 <script type="module" src="../js/perfil.js"></script>
+<script>
+    document.getElementById("voltarButton").addEventListener("click", function() {
+        window.history.back();
+    });
+</script>
 </html>

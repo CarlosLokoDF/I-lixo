@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif; /* Escolha a fonte desejada */
+    display: flex;
+    align-items: center;
+    text-align: center; /* Centraliza o conteúdo verticalmente */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    height: 100vh; /* Garante que a altura da página seja pelo menos a altura da viewport */
+    margin: 0; /* Remove margens padrão do corpo */
+}
+.titulo, h1{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    top:30px;
+    display: grid;
+    gap: 20px;
+}
+.container{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    gap: 20px;
+}
+
+button {
+    padding: 10px 20px; /* Ajuste conforme necessário */
+    font-size: 16px; /* Ajuste conforme necessário */
+    cursor: pointer;
+}
